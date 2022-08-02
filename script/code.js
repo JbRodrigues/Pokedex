@@ -27,15 +27,12 @@ const renderPokemon = async (pokemon) => {
         PokemonId.innerHTML = data.id
         PokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
     }
-
 }
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     renderPokemon(input.value.toLowerCase())
     input.value = ''
-
-
 })
 
 renderPokemon('1')

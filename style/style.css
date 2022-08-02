@@ -1,0 +1,55 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: PokemonBold;
+    src: url('../font/Pokemon\ Solid.ttf');
+ }
+
+ @font-face {
+    font-family: PokemonFont;
+    src: url('../font/Pokemon\ Hollow.ttf');
+ }
+
+ header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    border: 1px solid black;
+}
+
+#pokemonNome {
+    border: 1px solid black;
+    width: 10rem;
+    font-family: PokemonBold;
+}
+
+#pokemonId {
+    border: 1px solid black;
+    width: 10rem;
+}
+
+#pokemonImage {
+    border: 1px solid black;
+    width: 200px;
+    height: 300px;
+    margin-top: 1rem;
+}
+
+#busca{
+    width: 300px;
+    margin-top: 1rem;
+}

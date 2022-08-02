@@ -12,13 +12,22 @@
 
 <body>
 
-    <main>
-        <div id="pokemonNome"></div>
-        <div id="pokemonId"></div>
-        <img id="pokemonImage" src="" alt="">
+    <header>
+        <a href="https://fontmeme.com/pt/fonte-de-pokemon/"><img
+                src="https://fontmeme.com/permalink/220802/3a93b3a770f738e70b9f89412489ef6d.png" alt="fonte-de-pokemon"
+                border="0"></a>
+
         <form class="formulario">
             <input type="search" id="busca" required placeholder="Digite o nome ou número do pokemon">
         </form>
+    </header>
+
+    <main>
+        <div class="info">
+            <span id="pokemonId"></span>
+            <span id="pokemonNome"></span>
+        </div>
+        <img id="pokemonImage" src="" alt="Pokemon">
     </main>
 
     <script src="script/code.js"></script>
