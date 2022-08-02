@@ -7,49 +7,59 @@
 @font-face {
     font-family: PokemonBold;
     src: url('../font/Pokemon\ Solid.ttf');
- }
+}
 
- @font-face {
+@font-face {
     font-family: PokemonFont;
     src: url('../font/Pokemon\ Hollow.ttf');
- }
+}
 
- header{
+header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
- }
+}
 
 main {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100vw;
-    height: 100vh;
+    font-family: sans-serif, Arial, Helvetica;
+}
+
+#Logo {
+    width: 250px;
+    height: 100px;
+    margin: 1rem;
+}
+
+.pokemonCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 300px;
     border: 1px solid black;
 }
 
-#pokemonNome {
-    border: 1px solid black;
-    width: 10rem;
-    font-family: PokemonBold;
-}
-
-#pokemonId {
-    border: 1px solid black;
-    width: 10rem;
+p::first-letter {
+    text-transform:capitalize;
 }
 
 #pokemonImage {
-    border: 1px solid black;
     width: 200px;
-    height: 300px;
+    height: 200px;
     margin-top: 1rem;
+    border-bottom: 1px solid aqua;
+    border-radius: 0 0 1rem 1rem;
+    padding: 1rem;
+    background-color: aqua;
 }
 
-#busca{
+#busca {
     width: 300px;
     margin-top: 1rem;
 }
