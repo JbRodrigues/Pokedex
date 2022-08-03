@@ -61,6 +61,7 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
     renderPokemon(input.value.toLowerCase())
     input.value = ''
+    
 })
 
 renderPokemon('1')
@@ -69,6 +70,7 @@ btnPrev.addEventListener('click', (event) => {
     if (btn > 1) {
         btn = btn - 1;
         renderPokemon(btn)
+        Type.innerHTML = ``
     }
 })
 
@@ -76,4 +78,5 @@ btnPrev.addEventListener('click', (event) => {
 btnNext.addEventListener('click', (event) => {
     btn = btn + 1;
     renderPokemon(btn)
+    Type.innerHTML = ``
 })
