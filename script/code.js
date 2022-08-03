@@ -3,10 +3,13 @@ let PokemonId = document.querySelector('#pokemonId');
 let PokemonImage = document.querySelector('#pokemonImage');
 let input = document.querySelector('#busca');
 let form = document.querySelector('.formulario');
-let tipo = document.querySelector('.types')
-
 let btnPrev = document.querySelector('#btn-prev')
 let btnNext = document.querySelector('#btn-next')
+
+let Type = document.querySelector('.pokemon-types')
+
+let backgroundImage = document.querySelector('.image')
+let tipoPokemon = document.querySelector('.type')
 
 let btn = 0;
 
@@ -18,7 +21,7 @@ const fetchPokemon = async (pokemon) => {
         PokemonId.innerHTML = ''
         PokemonImage.src = ''
     }
-    const data = await APIResponse.json();//transformando os dados buscados em um Json
+    const data = await APIResponse.json();//transformando os dados buscados em Json
     return data;
 }
 
@@ -29,15 +32,30 @@ const renderPokemon = async (pokemon) => {
 
     const data = await fetchPokemon(pokemon)
     btn = data.id
-    console.log(btn)
     if (data) {
         PokemonName.innerHTML = data.name
         PokemonId.innerHTML = '#' + data.id
         PokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
 
+        let tipos = data.types
+
+        tipos.forEach(element => {
+            const pokemonType = element.type.name
+            if (tipos.length > 1) {
+                Type.innerHTML += `<div class="type">${pokemonType}</div>`
+            } else {
+                Type.innerHTML = `<div class="type">${pokemonType}</div>`
+            }
+        });
+
+
+
 
     }
 }
+
+/*Type = `<div class="type">${pokemonType}</div>`
+tipoPokemon.innerHTML = pokemonType*/
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -45,17 +63,14 @@ form.addEventListener('submit', (event) => {
     input.value = ''
 })
 
-
 renderPokemon('1')
 
 btnPrev.addEventListener('click', (event) => {
-
     if (btn > 1) {
         btn = btn - 1;
         renderPokemon(btn)
     }
 })
-
 
 
 btnNext.addEventListener('click', (event) => {

@@ -32,7 +32,7 @@ header {
     border: 1px solid black;
 }
 
-.btn{
+.btn {
     width: 300px;
     height: 50px;
     margin: 1rem;
@@ -54,7 +54,7 @@ p::first-letter {
     text-transform: capitalize;
 }
 
-.image{
+.image {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -63,12 +63,12 @@ p::first-letter {
     border-radius: 0 0 1rem 1rem;
 }
 
-#pokemonId{
+#pokemonId {
     color: #746b6b;
     margin: 0.2rem;
 }
 
-#pokemonNome{
+#pokemonNome {
     margin: 0.5rem;
     text-align: center;
 }
@@ -83,4 +83,20 @@ p::first-letter {
 #busca {
     width: 300px;
     margin-top: 1rem;
+}
+
+.pokemon-types {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.type{
+    border: 1px solid black;
+    margin: 0.5rem;
+    width: 100px;
+    text-align: center;
+    height: 30px;
+    background-color: gray;
+    color: white;
 }
