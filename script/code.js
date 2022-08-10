@@ -32,8 +32,23 @@ const renderPokemon = async (pokemon) => {
     btn = data.id
     if (data) {
         PokemonName.innerHTML = data.name
-        PokemonId.innerHTML = '#' + data.id
-        PokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
+        let id = data.id
+
+        //Função pra adicionar os zeros a esqueda antes do ID
+        function addZeroes(num, len) {
+            var numberWithZeroes = String(num);
+            var counter = numberWithZeroes.length;
+
+            while (counter < len) {
+                numberWithZeroes = "0" + numberWithZeroes;
+                counter++;
+            }
+            return numberWithZeroes;
+        }
+
+        PokemonId.innerHTML = '#' + addZeroes(id, 3)
+        PokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['front_default'];
+        console.log(PokemonImage.src)
 
         let tipos = data.types
 
@@ -51,8 +66,6 @@ const renderPokemon = async (pokemon) => {
     }
 }
 
-/*Type = `<div class="type">${pokemonType}</div>`
-tipoPokemon.innerHTML = pokemonType*/
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
