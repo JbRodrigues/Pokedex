@@ -8,8 +8,7 @@ let btnNext = document.querySelector('#btn-next')
 
 let Type = document.querySelector('.pokemon-types')
 
-let backgroundImage = document.querySelector('.image')
-let tipoPokemon = document.querySelector('.type')
+
 
 let btn = 0;
 
@@ -29,7 +28,6 @@ const renderPokemon = async (pokemon) => {
     PokemonName.innerHTML = 'Loading...'
     PokemonId.innerHTML = ''
     PokemonImage.src = ''
-
     const data = await fetchPokemon(pokemon)
     btn = data.id
     if (data) {
@@ -40,16 +38,15 @@ const renderPokemon = async (pokemon) => {
         let tipos = data.types
 
         tipos.forEach(element => {
-            const pokemonType = element.type.name
+            var pokemonType = element.type.name
             if (tipos.length > 1) {
                 Type.innerHTML += `<div class="type">${pokemonType}</div>`
+                var backgroundType = document.querySelector('.type')
             } else {
                 Type.innerHTML = `<div class="type">${pokemonType}</div>`
+                var backgroundType = document.querySelector('.type')
             }
         });
-
-
-
 
     }
 }
@@ -61,7 +58,7 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
     renderPokemon(input.value.toLowerCase())
     input.value = ''
-    
+
 })
 
 renderPokemon('1')

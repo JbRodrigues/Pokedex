@@ -16,15 +16,15 @@
 
 header {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
+    flex-direction: row;
     align-items: center;
     border-bottom: 2px solid black;
 }
 
 .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row;
     font-family: sans-serif, Arial, Helvetica;
@@ -39,6 +39,8 @@ header {
 }
 
 #Logo {
+    display: flex;
+    justify-content: flex-start;
     width: 250px;
     height: 100px;
     margin: 1rem;
@@ -47,7 +49,7 @@ header {
 .pokemonCard {
     height: 400px;
     width: 300px;
-    border: 1px solid black;
+    
 }
 
 p::first-letter {
@@ -59,13 +61,14 @@ p::first-letter {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: aqua;
+    background-color: rgb(92, 90, 90);
     border-radius: 0 0 1rem 1rem;
 }
 
 #pokemonId {
-    color: #746b6b;
+    color: #e0d4d4;
     margin: 0.2rem;
+    font-weight: bo;
 }
 
 #pokemonNome {
@@ -82,21 +85,23 @@ p::first-letter {
 
 #busca {
     width: 300px;
+    height: 50px;
     margin-top: 1rem;
+    margin-right: 1rem;
 }
 
 .pokemon-types {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: row;
 }
 
-.type{
+.type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid black;
     margin: 0.5rem;
     width: 100px;
-    text-align: center;
     height: 30px;
-    background-color: gray;
-    color: white;
 }
